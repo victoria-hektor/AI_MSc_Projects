@@ -1,0 +1,24 @@
+function evaluateAndWriteFIS(fis, inputData, dataFile, sheetName, outputStartCell)
+    % Define the different defuzzification methods
+    defuzzMethods = {'centroid', 'mom', 'lom', 'som', 'bisector'};
+
+    % Initialise a matrix to hold the results
+    numDataPoints = size(inputData, 1);
+    results = zeros(numDataPoints, numel(defuzzMethods));
+    
+    % Loop through each defuzzification method
+    for i = 1:numel(defuzzMethods)
+        % Update the FIS to use the current defuzzification method
+        fis.DefuzzificationMethod = defuzzMethods{i};
+
+        % Evaluate the FIS for all input data
+        for j = 1:numDataPoints
+            results(j, i) = evalfis(fis, inputData(j, :));
+        end
+    end
+    
+    % Write the results to the Excel file
+    % Determine the Excel range to write the results
+    outputRange = [outputStartCell, char('H' + numel(defuzzMethods) - 1), num2str(numDataPoints + 2)];
+    xlswrite(dataFile, results, sheetName, outputRange);
+end
