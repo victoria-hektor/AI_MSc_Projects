@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+header .logo {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #555;
+}
+
+nav .icons {
+    display: flex;
+    align-items: center;
+}
+
+nav .icons a {
+    margin: 0 10px;
+}
+
+nav .icons img {
+    width: 20px;
+    height: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    border-bottom: 1px solid #000;
+}
+
+section h2 {
+    font-size: 1.5em;
+}
+
+section p {
+    font-size: 1em;
+}
+
+footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EVA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html"><img src="images/logo-no-background.png" alt="Logo" style="height:30px; margin-top:5px;"></a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="cnn.html" class="w3-bar-item w3-button">CNN Analysis</a>
+      <a href="srl.html" class="w3-bar-item w3-button">SRL Analysis</a>
+      <a href="rf.html" class="w3-bar-item w3-button">RF Analysis</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="images/logo-no-background.jpg" alt="Medical Images" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <<h1 class="w3-xxlarge">Evolutionary Visual Analytics</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="images/landing-page-image.jpg" class="w3-round w3-image w3-opacity-min" alt="Medical Images" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">About EVA - Evolutionary Visual Analytics</h1><br>
+        <h5 class="w3-center">At EVA, we are at the forefront of revolutionising medical imaging analysis through advanced artificial intelligence techniques. Our commitment to excellence drives us to develop cutting-edge solutions that enhance diagnostic accuracy and efficiency in the healthcare sector.</h5>
+        <p class="w3-large">Our mission is to <span class="w3-tag w3-light-grey">empower</span> medical professionals with robust and reliable tools for the precise classification and analysis of medical images. We focus on three key areas of expertise:</p>
+        <p class="w3-large w3-text-grey w3-hide-medium">
+            1. <strong>Convolutional Neural Networks (CNN) Analysis</strong>: Leveraging the power of CNNs, we provide robust feature extraction and classification capabilities, significantly improving the accuracy of medical diagnoses.<br>
+            2. <strong>Random Forest (RF) Analysis</strong>: Utilising the interpretability and robustness of Random Forests, we offer an alternative perspective on medical image classification, ensuring reliable and understandable results.<br>
+            3. <strong>Supervised Reinforcement Learning (SRL) Analysis</strong>: By integrating semi-supervised transfer learning with supervised reinforcement learning, we enhance model performance and generalisation, even with limited labelled data.
+        </p>
+        <p class="w3-large w3-text-grey w3-hide-medium">We envision a future where advanced AI-driven analytics play a pivotal role in transforming medical imaging, leading to better patient outcomes through precise and early diagnosis.</p>
+        <p class="w3-large w3-text-grey w3-hide-medium">Our approach is informed by comprehensive literature reviews and empirical evaluations, synthesising current research trends in brain tumour classification. We continuously strive to push the boundaries of medical imaging analysis, ensuring our solutions remain at the cutting edge of technology.</p>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>If you have any questions or wish to contribute to our research, do not hesitate to contact us.</p>
+    <p class="w3-text-blue-grey w3-large"><b>DMU, Leicester, UK</b></p>
+    <p>You can also contact us by phone +447415314400 or email enquiries@eva.com, or you can send us a message here:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="#" title="EVA" target="_blank" class="w3-hover-text-green">EVA</a></p>
+  <p>&copy; 2024 EVA - Evolutionary Visual Analytics</p>
+</footer>
+
+</body>
+</html>

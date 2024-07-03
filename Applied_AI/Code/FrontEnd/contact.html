@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact - EVA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+.contact-info {
+  margin-top: 20px;
+}
+.contact-info p {
+  font-size: 1.2em;
+}
+.contact-info b {
+  font-size: 1.5em;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button w3-left"><img src="images/logo-no-background.png" alt="Evolutionary Visual Analytics" style="height:30px;"></a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="cnn.html" class="w3-bar-item w3-button">CNN Analysis</a>
+      <a href="srl.html" class="w3-bar-item w3-button">SRL Analysis</a>
+      <a href="rf.html" class="w3-bar-item w3-button">RF Analysis</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="container">
+  <h1 class="w3-center">Contact Us</h1>
+  <p class="w3-center">If you have any questions or wish to contribute to our research, do not hesitate to contact us.</p>
+  <div class="w3-row-padding w3-padding-32">
+    <div class="w3-col m6">
+      <form action="/action_page.php" target="_blank">
+        <input class="w3-input" type="text" placeholder="Your Name" required name="Name">
+        <input class="w3-input" type="email" placeholder="Your Email" required name="Email">
+        <textarea class="w3-input" placeholder="Your Message" required name="Message" rows="4"></textarea>
+        <button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button>
+      </form>
+    </div>
+    <div class="w3-col m6 contact-info">
+      <p><b>Address:</b> EVA, 42nd Living St, 43043 New York, NY</p>
+      <p><b>Phone:</b> +447415314400</p>
+      <p><b>Email:</b> enquiries@eva.com</p>
+      <p><b>Follow us:</b></p>
+      <p>
+        <a href="#" class="w3-button w3-light-grey w3-margin-right">Facebook</a>
+        <a href="#" class="w3-button w3-light-grey w3-margin-right">Twitter</a>
+        <a href="#" class="w3-button w3-light-grey">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="#" title="EVA" target="_blank" class="w3-hover-text-green">EVA</a></p>
+  <p>&copy; 2024 EVA - Evolutionary Visual Analytics</p>
+</footer>
+
+</body>
+</html>

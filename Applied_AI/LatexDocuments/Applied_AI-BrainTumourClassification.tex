@@ -1,0 +1,227 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Clear all header and footer fields
+\fancyhf{}
+
+% Set the right side of the footer to show the page number
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+\title{Exploring and Evaluating Modern Techniques in
+Brain Tumour Classification: A Collaborative
+Research Study\\}
+
+\author{\IEEEauthorblockN{Ella Vithanage}
+\IEEEauthorblockA{\textit{Artificial Intelligence MSc} \\
+\textit{Applied AI}\\
+De Montfort University, Leicester, UK \\
+p2537413@my365.dmu.ac.uk}
+\and
+\IEEEauthorblockN{Victoria Hektor}
+\IEEEauthorblockA{\textit{Artificial Intelligence MSc} \\
+\textit{Applied AI}\\
+De Montfort University, Leicester, UK \\
+P2629898@my365.dmu.ac.uk}
+\and
+\IEEEauthorblockN{Abdulaziz Alqulayti}
+\IEEEauthorblockA{\textit{Artificial Intelligence MSc} \\
+\textit{Applied AI}\\
+De Montfort University, Leicester, UK \\
+p2811611@my365.dmu.ac.uk}
+}
+
+\maketitle
+
+\begin{abstract}
+Brain tumour classification remains a critical challenge in medical imaging, necessitating precise and reliable methods for accurate diagnosis and treatment planning. This paper presents a collaborative study by three authors, each contributing a unique methodology to advance the state-of-the-art in brain tumour classification, aptly named EVA, (Evolutionary Visual Analytics); using our initials for the system name. The first approach leverages Convolutional Neural Networks (CNNs) for robust feature extraction and classification, demonstrating significant improvements in accuracy and efficiency, [28]. The second methodology explores Semi-Supervised Transfer Learning and Supervised Reinforcement Learning, harnessing the power of pre-trained models and fine-tuning them with limited labelled data to enhance performance and generalisation, [29]. The third approach utilises Random Forests, a powerful ensemble learning technique, to provide an alternative perspective on tumour classification with an emphasis on interpretability and robustness, [30]. Through a comprehensive literature review and empirical evaluation, this paper not only compares these diverse methodologies but also synthesises current research trends in brain tumour classification. The findings underscore the potential of combining these advanced techniques to achieve superior diagnostic accuracy and reliability, paving the way for future innovations in medical imaging. This article should be read preemptively in conjunction with [28], [29], and [30].
+\end{abstract}
+
+\subsection*{}
+\begin{IEEEkeywords}
+Brain Tumour Classification, Convolutional Neural Networks (CNNs), Semi-Supervised Learning, Transfer Learning, Random Forests, Medical Imaging, MRI, Deep Learning, Ensemble Learning, Diagnostic Accuracy, Feature Extraction, Model Generalisation, Interpretability, Hybrid Models, Patient Outcomes
+\end{IEEEkeywords}
+
+\section*{Abbreviations and Acronyms}\label{AA}
+CNN: Convolutional Neural Network; MRI: Magnetic Resonance Imaging
+RL: Reinforcement Learning; AI: Artificial Intelligence; DL: Deep Learning; ML: Machine Learning; DNN: Deep Neural Network; GWO: Grey Wolf Optimization; GSI: Generalised Structural Information; NLP: Natural Language Processing; SVM: Support Vector Machine; RF: Random Forest; ROC: Receiver Operating Characteristic; AUC: Area Under the Curve; TL: Transfer Learning; ReLU: Rectified Linear Unit; RMSProp: Root Mean Square Propagation; SGD: Stochastic Gradient Descent; Adam: Adaptive Moment Estimation; XAI: Explainable Artificial Intelligence; CV: Cross-Validation; k-NN: k-Nearest Neighbours; PCA: Principal Component Analysis; ICA: Independent Component Analysis; LDA: Linear Discriminant Analysis; QDA: Quadratic Discriminant Analysis; LSTM: Long Short-Term Memory; GRU: Gated Recurrent Unit; GAN: Generative Adversarial Network; AE: Autoencoder; VAE: Variational Autoencoder.
+
+\section{Introduction}
+Brain tumours represent a significant and complex challenge in modern medicine due to their aggressive nature and the critical functions of the brain regions they affect. The incidence of brain tumours varies globally, with significant implications for healthcare systems worldwide. According to recent data, brain tumours account for about 3.4\% of all cancers, but they have a disproportionate impact due to their high mortality rates and the severe neurological deficits they can cause, [16]. Recent advances in AI and ML have revolutionised the diagnosis and classification of brain tumours. These technologies have significantly improved the accuracy and speed of diagnosis, allowing for better patient outcomes. [16]. The global burden of brain cancer remains substantial, with varying incidence and mortality rates across different regions. A comprehensive study has highlighted that brain cancer incidence is highest in high-income countries, reflecting better diagnostic capabilities, while mortality rates remain a critical concern globally due to the aggressive nature of these tumours and the limited effectiveness of current treatment options, [17].
+
+Statistical data from The Brain Tumour Charity underscores the urgent need for improved diagnostic and treatment strategies. In the UK alone, approximately 11,700 people are diagnosed with a primary brain tumour each year, and brain tumours are the leading cause of cancer-related deaths in children and adults under 40, [18]. The impact on patients and their families is profound, not only due to the physical and cognitive impairments caused by the tumours but also due to the emotional and financial burdens of long-term care. Machine and deep learning approaches have shown promise in enhancing the detection and classification of brain tumours. A systematic review of these technologies indicates that they can effectively distinguish between different types of brain tumours, predict tumour progression, and assist in treatment planning by identifying tumour boundaries with high precision, [18].
+
+\section{Data}
+The dataset used for this study is the "Brain Tumor MRI Dataset" curated by M. Nickparvar and available on Kaggle. This dataset comprises MRI images of brain tumours, segmented into three categories: glioma, meningioma, and pituitary tumour. Each category contains a substantial number of images, ensuring a diverse and representative sample for training and evaluating classification models. The images are stored in JPEG format and are labelled accordingly, providing a solid foundation for supervised learning tasks. This dataset is particularly valuable for developing and benchmarking brain tumour classification algorithms due to its comprehensive coverage and quality. [12].
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.5\textwidth]{ExampleBrainimages.png}}
+\caption{Depiction of Each Image Category.}
+\label{fig}
+\end{figure}
+
+\section{Methodologies}
+
+\subsection{Convolutional Neural Networks (CNNs):}
+ One author focuses on using CNNs for brain tumour classification, leveraging their capability to automatically extract relevant features from MRI images. This method has shown promise in achieving high accuracy and efficiency in classifying different types of brain tumours. [28].
+
+\subsection{Random Forests:}
+ The third methodology employs Random Forests, an ensemble learning technique that combines multiple decision trees to improve classification performance. This method emphasises interpretability and robustness, offering a complementary perspective to the deep learning-based approaches. [29].
+
+\subsection{Semi-Supervised Transfer Learning \& Supervised 
+ Reinforcement Learning:}
+Another author explores semi-supervised transfer learning techniques, which involve using pre-trained models on large datasets and fine-tuning them with a smaller set of labelled data. This approach aims to maximise the performance and generalisation of the classifier, especially in scenarios with limited annotated data. [30].
+
+\section{Literature Review}
+Before moving on to the technical experiment analysis, a thorough literature review was completed, a general overview as well as a more in depth review for each of the employed methodologies is provided in [28], [29], and [30]. Brain tumour classification has seen significant advancements in recent years, driven by the development of deep learning and other sophisticated machine learning techniques. This review summarises key research papers in the field, highlighting the various approaches and their contributions. 
+
+\subsection{Literature Review on Brain Tumour Classification Techniques}
+Srinivasan et al. (2024) introduced a hybrid deep CNN model for multi-classification of brain tumours. The model combines different CNN architectures to leverage their strengths in feature extraction and classification, resulting in improved accuracy and robustness in diagnosing brain tumours from MRI images. In another study, Srinivasan et al. (2023) utilised a deep learning technique specifically for grade classification of tumours from brain MRI images. This approach focuses on distinguishing between different grades of tumours, which is crucial for determining the appropriate treatment strategies. [1], [2]. Chatterjee et al. (2022) developed deep spatiospatial models for brain tumour classification. These models consider both spatial and spatio-temporal features within MRI images, enhancing the ability to accurately classify different types of brain tumours. [3].
+
+Rasool et al. (2022) presented a hybrid deep learning model for brain tumour classification. This model integrates traditional machine learning methods with deep learning techniques to improve classification performance, particularly in cases where data is limited or highly imbalanced. [4]. Jain et al. (2024) compared various transfer learning techniques for brain tumour classification using MRI images. Transfer learning involves using pre-trained models on large datasets and fine-tuning them on smaller, task-specific datasets. This approach has been shown to significantly enhance the performance of brain tumour classifiers. [5].
+
+Agarwal et al. (2024) explored deep learning techniques for enhanced brain tumour detection and classification. Their study highlights the effectiveness of deep learning models in improving the sensitivity and specificity of tumour detection, which is critical for early diagnosis and treatment planning. [6]. Zeineldin et al. (2022) investigated the explainability of deep neural networks for MRI analysis of brain tumours. Explainability is essential for gaining clinical trust and ensuring that the models' decisions can be understood and verified by medical professionals. [7]. Haque et al. (2024) introduced NeuroNet19, an explainable deep neural network model for brain tumour classification using MRI data. This model not only achieves high accuracy but also provides interpretable results, making it suitable for clinical applications. [8].
+
+Tandel et al. (2019) provided a comprehensive review of deep learning perspectives in brain cancer classification. This paper summarises various deep learning techniques and their applications in brain tumour classification, offering insights into current trends and future directions. [9]. Badža and Barjaktarović (2020) utilised convolutional neural networks (CNNs) for the classification of brain tumours from MRI images. Their study demonstrates the efficacy of CNNs in extracting relevant features from MRI data and accurately classifying different tumour types. [10]. ZainEldin et al. (2022) proposed a deep learning approach combined with sine-cosine fitness grey wolf optimisation for brain tumour detection and classification. This hybrid method enhances the optimisation process, leading to improved classification accuracy and robustness. [11].
+
+\subsection{CNN Literature Review}
+Convolutional Neural Networks have been developed in recent years as a branch of Deep Learning within Artificial Intelligence. Bringing various applications to several domains such as within radiology and medical fields, CNNs are versatile by using convolution, pooling and fully connected layers [25]. They work by using a mathematical design whereby grid patterns which exist in images can be processed. They have been credited in their use for image processing and in an article titled ‘Image processing for medical diagnosis using CNN’ [25], it is explained that an advantage of using CNNs is the ability to be able to identify and extract features, however they can be computationally complex resulting in real-time processing being a substantial problem for outputting results. In another article [26], brain tumour detection is attempted by using a CNN by using a binary and multiclass classification system, achieving results of 97.8\% and 100\% classification accuracy. This shows that CNNs are a great resource for precision in classifying brain tumours, being the main rationale for using this method. It’s suggested that using GPU is optimal for the execution time when using Convolutional Neural Networks [3], this makes use of high performance computation which is necessary for the execution and deployment of CNNs especially in real-time image processing. [24], [27].
+
+\subsection{SSTL \& SRL  Literature Review}
+In developing the semi-supervised transfer learning (SSTL) and supervised reinforcement learning (SRL) algorithm, drawing on the extensive survey by Cheplygina et al. (2018) which highlights the utility of semi-supervised learning (SSL) in medical imaging. This approach leverages both labelled and unlabelled data to enhance classifier performance, a strategy we adapt to improve the efficiency and accuracy of our reinforcement learning model. [13]. Additionally, the insights provided by Inés et al. (2021), which demonstrate the effectiveness of combining transfer learning with semi-supervised learning techniques for biomedical image classification. Their AutoML method, implemented in the ATLASS tool, enhances model performance by leveraging both labelled and unlabelled data, which is a strategy we adapt to improve the efficiency and accuracy of our reinforcement learning model. [14]. Drawing on the innovative approach by Ge et al. (2020), which successfully employs deep semi-supervised learning for brain tumour classification, helps to inform this method. Their method effectively utilises both labelled and unlabelled data through a novel graph-based framework, augmented by GAN-generated synthetic MRIs to improve classification accuracy. [15].
+
+\subsection{Random Forests Literature Review}
+Random Forest method is a commonly employed ensemble learning technique. It is remarkably adequate For medical image examination. Random Forest Presented by Breiman (2001), [20]. It creates numerous decision trees with the utilisation of various parts from the feature subsets and dataset leading to improving the precision and also helping to minimise the overfitting in comparison with single decision trees. RF in medical imaging has shown substantial promise. Ghongade and Wakde (2017), [21], displayed its efficacy in interpreting and classifying breast cancer using a computer-aided diagnosis solution, underlining its capability to manage overfitting well and high-dimensional data. Also, Menze et al. (2015), [22]. used RF to classify brain tumour varieties using MRI images, which showed trustworthiness and increased precision. All of These papers highlight the RF's ability to handle complicated patterns found in medical imaging datasets, which drives us to the conclusion that it's a robust and trustworthy instrument for medical diagnostics tasks. 
+
+\section{CNN Implementation, Results \& Analysis}
+\subsection{Data Pre-Processing}
+To process the image data to be able to use CNNs, the images must be accessible and resized for the use in Google Colab. The data was accessed via mounting the Google drive, meaning the images would not have to be uploaded each time. The data was then split into three sets: training, testing and validation. This enables for the Convolutional Neural Network to be trained using the training set where the model can learn patterns such as the features that each individual tumour presents, validation is apparent when parameters are changed through trial and error and finally the test set enables generalisability to unseen data.
+
+\subsection{Model Architecture}
+The architecture design that is employed for the CNN method uses:
+\begin{itemize}
+    \item Input layer: To receive the images as inputs and be able to use them within the CNN.
+    \item Convolutional layers: Three convolutional layers are utilised so it fits within the area of deep learning, they detect patterns and features in the images.
+    \item Pooling layers: Three layers are deployed in this system’s architecture, these layers aim to reduce the computational complexity and prevent overfitting.
+    \item Dropout layer: To further prevent overfitting, a dropout layer is used, it randomly selects half of the input units to be set to 0.
+    \item Flatten layer: This aids the model to be able to use dense, connected layers for classification.
+    \item Fully Connected Layers: These connect every neuron in one layer to the next using the weighted sum and bias. By using these layers, classification is achievable within image processing for this task.
+    \item Output Layer: This provides the final output for the model which is a classification accuracy based on which items are correctly classified.
+\end{itemize}
+
+\subsection{Training and Optimisation}
+To train the CNN, the training set is utilised, this is where the system is able to recognise patterns and learn recursively through iterations (epochs). To optimise this procedure, GPU is used so the processing time is reduced, however this caused problems on Google Colab which has limited GPU usage. Intuitively, the more epochs that are ran, the greater performance this will have on results. As the system is computationally complex, only a finite number of instances are supplied, giving the basis of a model that could be developed with more time to execute and test. 
+
+\begin{itemize}
+\item Benchmark 1 - Using one epoch to test the system seemed the most optimal way to exhibit results under time constraints: The training classification accuracy results in the loss being 1.0550 and accuracy being 50\% (2sf) with the validation set, this results in the loss being much higher, at 1.3812 and accuracy being 45\% (2sf).
+\item Benchmark 2 - Using two epochs: The best results of the second run through the system situated in the training loss being 0.7970 and the accuracy being 67\% (2sf). The validation set results were the loss being  0.9035 and accuracy being 66\% (2sf).
+\item Benchmark 3 - Using three epochs: The best results with the third epoch results in the training loss being 0.6325 and accuracy being 75\% (2sf) and validation loss being 0.9053 and accuracy being 71\% (2sf).
+\end{itemize}
+
+\subsection{Visualisation and Results}
+In the analysis of benchmark results for tumour categorisation using supervised learning on labelled data, three benchmarks were evaluated based on different epoch counts. Benchmark 1, with one epoch, achieved a generalisability of 62\% (to 2 significant figures) and a loss of 0.9982, which is lower than the test or validity set results. Benchmark 2, with two epochs, showed an overall accuracy of 49\% (2sf) and a loss of 1.6382. Benchmark 3, with three epochs, resulted in an overall accuracy of 63\% (2sf) and a loss of 1.1953. The analysis indicates that the highest training and validation accuracy of 75\% was observed in the third benchmark, while the best test accuracy of 63\% was also achieved in the third benchmark. This suggests that increasing the number of epochs is likely to improve performance accuracy in categorising tumours. Therefore, it is recommended to conduct further testing with more epochs, under less rigid time constraints, and to explore different layers and compiling features to enhance the system's performance.
+
+\begin{figure}[htbp]            
+   \centerline{\includegraphics[width=0.3\textwidth]{ConfudionMatrix.png}}
+    \caption{Method One Best Benchmark Confusion Matrix.}
+    \label{fig}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.3\textwidth]{ROC_Vis.png}}
+    \caption{Method One Best Benchmark Curve Visualisation.}
+    \label{fig}
+\end{figure}
+
+\section{Semi-Supervised Transfer Learning \& Supervised Reinforcement Learning Implementation, Results \& Analysis}
+
+\subsection{Data Pre-Processing}
+The dataset employed, sourced from Kaggle's Brain Tumour MRI Dataset, included MRI scans categorised into glioma, meningioma, no tumour, and pituitary tumour. Pre-processing involved resizing images to 128x128 pixels, normalisation, and applying data augmentation techniques such as rotation, zoom, and horizontal flipping to enhance model robustness and prevent overfitting.
+
+\subsection{Model Architecture}
+The first model leveraged the VGG16 convolutional neural network for feature extraction, augmented with custom fully connected layers tailored for the classification task. This transfer learning approach utilised the pre-trained weights of VGG16, reducing the training data requirements. Additionally, an EfficientNetB0 architecture was explored in the third model, which was then fine-tuned to improve classification accuracy.
+
+\subsection{Training and Optimisation}
+Training was conducted on Google Colab, utilising its GPU capabilities. The Adam optimiser and categorical cross-entropy loss function were used for multi-class classification. To enhance the model's performance, hyperparameter tuning was performed using Keras Tuner, adjusting parameters such as learning rate and dropout rate. The training process incorporated callbacks like ReduceLROnPlateau and EarlyStopping to prevent overfitting and ensure optimal learning.
+
+\subsection{Visualisation and Results}
+Visualisation tools such as confusion matrices and learning curves were employed to monitor model performance. The best results achieved were as follows; Benchmark One training accuracy reaching around 82\% and validation accuracy around 83\%, on the second benchmark, the accuracy achieved was 31\%, with the confusion matrix highlighting significant misclassifications, particularly among tumour classes. Classification reports provided detailed metrics, including precision, recall, and F1-score, revealing areas for improvement. The results underscore the complexity of brain tumour classification and the potential benefits of refined model architectures and advanced training techniques.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.25\textwidth]{Training-Val-Accuracy-Loss-run1.png}}
+\caption{Method Two Best Benchmark.}
+\label{fig}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.25\textwidth]{Confusion-Matrix-run2}}
+    \caption{Method Two Best Benchmark Confusion Matrix.}
+    \label{fig}
+\end{figure}
+
+\section{Random Forests Implementation, Results \& Analysis}
+
+\subsection{Data Pre-Processing}
+The images from the dataset had different sizes. Because of the model requirement of uniform size, images were resized to 128x128 pixels. Then, features were extracted from the images using ORB, SIFT, and HOG. After that, images were transformed to grayscale, normalised, and flattened. Finally, each feature was integrated with the flattened images, and the labels encoded for the training.
+
+\subsection{Model Architecture}
+The model uses RandomForestClassifier as the primary model with other Classifiers. It is a method that creates numerous decision trees. By integrating the predictions from these trees, this model improves its accuracy. RandomForest is considered adequate for complicated tasks such as brain tumour classification, which makes it a sensible option.
+
+\subsection{Training and Optimisation}
+Training the model is accomplished by splitting the dataset into training and validation sets. The model was fine-tuned using hyperparameters such as tree depth, minimum samples per split, and the number of trees. Validation accuracy is employed to guarantee the most promising model accuracy.
+
+\subsection{Visualisation and Results}
+The best model was assessed on the test data and has reached high accuracy. The classification report and confusion matrix delivered precise performance metrics. For visualisation, learning curves and a confusion matrix heatmap were used to present the model’s efficacy in classifying brain tumours. The outcomes underlined that the RandomForest model is conceivable for clinical application with supporting proof of its classification accuracy among different tumour types. It achieved a test accuracy of 0.92\%.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Abdulaziz_RF_Confusion_Matrix.png}
+    \caption{Random Forest Confusion Matrix}
+    \label{fig:confusion_matrix}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Abdulaziz_RF_Learning_Curve.png}
+    \caption{Random Forest Learning Curve}
+    \label{fig:learning_curve}
+\end{figure}
+
+\section{Comparison, Analysis \& Conclusions}
+The study evaluated three methodologies for brain tumour classification: CNNs, Semi-Supervised Transfer Learning(SSTL) and Supervised Reinforcement Learning (SRL), and Random Forests (RF). CNNs leveraged automatic feature extraction from MRI images, achieving high accuracy and efficiency, while SSTL and SSL utilised pre-trained models fine-tuned with limited labelled data for enhanced performance and generalisation. RF emphasised interpretability and robustness by combining multiple decision trees. Analysis revealed that CNNs provided the best training and validation accuracy, particularly in the third benchmark with three epochs, achieving a training accuracy of 75\% and a test accuracy of 63\%. SSTL and SRL showed significant potential in improving model efficiency with both labelled and unlabelled data, despite mixed results and notable misclassifications. RF demonstrated high test accuracy (up to 92\%) and proved robust for clinical applications. The CNN methodology emerged as the most effective, especially where accuracy and efficiency are critical. The Semi-Supervised approach holds promise for further development, and Random Forests offer robust and interpretable solutions for clinical settings. 
+
+\section{Acknowledgements}
+We wish to thank Nathanael Baisa for his support, patience, teaching, and guidance throughout the Applied AI unit. Without his help, we surely would not have produced such a strong piece of research. We also wish to thank all the teaching staff within the Artificial Intelligence MSc programme, who have taught us in ways we could understand, providing us with a solid foundation to succeed in this and all other modules.
+
+\nocite{*} % Include all references from BibTeX file
+
+\bibliographystyle{unsrt} % Choose bibliography style
+\bibliography{GroupProject} % Include BibTeX file
+\normalsize
+
+\clearpage
+% Include each report as a separate part of the document
+\includepdf[pages=-]{Brain_Tumour_Classification_using_a_Convolutional_Neural_Network.pdf}
+\clearpage
+\includepdf[pages=-]{IndividualReport_BrainTumour.pdf}
+\clearpage
+\includepdf[pages=-]{Abdulaziz_Alqulayti_Brain_Tumor_Report.pdf}
+
+
+\end{document}
