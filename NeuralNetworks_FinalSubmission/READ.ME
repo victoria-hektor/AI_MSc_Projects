@@ -1,0 +1,47 @@
+READ ME
+
+Folders & FIles:
+
+BinaryCode_VH_Final
+Order that I ran the scripts in:
+1. kdd_data_extraction.m       - Extracting the data from a txt file to xlsx
+2. normalised_scaled.m		   - Scaled the numeric columns to between 0 and 1
+3. kdd_delete_column_2.m       - Deleted any columns that were not needed
+4. Column_name_change.m		   - Through pre-processing, the column names changed, so I wrote a script to quickly change them 
+5. kdd_redundancy_duplicate.m  - This file checks the data for duplicate or redundant data and then deletes it
+6. kdd_basic_nn.m			   - This is a basic neural network
+7. kdd_basic_2.m			   - This is a variation of the basic nn and saves the nn to a file for future use
+8. kdd_nn_cross_validation.m   - Here I start to explore Cross-Validation
+9. kdd_nn_cv_final.m           - Here I have tweaked some things, added in error handling & calculating the lowest error and displaying it.
+10. kdd_nn_adam.m			   - Trying different training algorithms
+11. kdd_nn_br.m				   - Trying different training algorithms
+12. kdd_nn_gd_dropout.m		   - Here is where I needed to check for overfitting and implemented dropout to try and prevent this, so far I couldn't get this working and had this error: Error using kdd_nn_gd_dropout Error in window 1, step 1
+13. kdd_nn_gd_weight_decay.m   - Attempt at trying my hand at weight decay method...
+
+Excel Files and order they were created:
+1. kdd_data.xlsx 							- Extracted the data from .txt file to a .xlsx file for readability
+2. kdd_normalised.xlsx     					- This is after deleting any columns that were not needed
+3. normalised_scaled.xlsx					- The data after being scaled
+4. kdd_no_redundancy_and_duplicates.xlsx	- This is the final data that will be used in the nn
+
+Multiclass_Attempt
+This was more difficult and needed the data extracted differently using onehot encoding
+1. multiclass_data_extraction.m       - Extracting the data from a txt file to xlsx
+2. multiclass_normalised_scaled.m	  - Scaled the numeric columns to between 0 and 1
+3. multiclass_delete_column_2.m       - For poss deleting columns...
+4. Column_name_change.m		   		  - For if columns names need changing
+5. multiclass_redundancy_duplicate.m  - This file checks the data for duplicate or redundant data and then deletes it
+6. kdd_multiclass_nn_lm.m			  - First attempt at multi-classification
+
+Excel Files and order they were created:
+1. kdd_data.cvs 							- Extracted the data from .txt file to a .xlsx file for readability
+2. kdd_data_multiclass.xlsx     			- This is after deleting any columns that were not needed
+3. kdd_scaled_encoded.cvs					- The data after being scaled and onehot encoded
+4. kdd_no_redundancy_and_duplicates.xlsx	- This is the final data that will be used in the nn
+
+Partial_Conectivity_Attempt
+1. kdd_nn_partial_connectivity.m 			- This is based on the binary classification which had full connectivity, used fitnet to enable control of hidden layers and nerons connectivity
+
+Excel Spreadsheet
+1. kdd_no_redundancy_and_duplicates.xlsx 	- Used from pre-processing in binary stage
+
